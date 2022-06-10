@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "point-of-vue": "^0.0.4",
+    "path": "^0.12.7",
     "vue": "^3.2.36",
     "vue-router": "^4.0.3"
   },
@@ -16,5 +16,6 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-service": "~5.0.0"
+    
   }
 }

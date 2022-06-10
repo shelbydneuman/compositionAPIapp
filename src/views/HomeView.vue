@@ -34,6 +34,7 @@ export default {
   name: 'HomeView',
   setup() {
     const store = inject('store');
+    // console.log("Homeview store:", store)
 
     // uncomment colorCode to change color of counter if using readonly
     // const colorCode = computed({

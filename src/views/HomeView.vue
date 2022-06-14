@@ -21,6 +21,28 @@
       <!-- change value of v-model to "colorCode" if using readonly(no two-way binding) -->
       <input v-model="store.state.colorCode" placeholder="Enter Color Code" type="text">
     </div>
+    <!-- <div>
+      user: {{store.users.user1}}
+    </div> -->
+    <div class="bestuser">Best User: {{store.bestUser.value}}</div>
+    <div class="users">
+      <div class="addUser">
+        <label for="adduser">ADD USERNAME HERE</label>
+        <input  id="adduser" type="text">
+        <label for="addlocation">ADD USER LOCATION HERE</label>
+        <input  id="addlocation" type="text">
+        <button @click="store.usersMethods.addUser()">add user</button>
+      </div>
+      <div v-for="user in store.users" :key="user.userId">
+        <p>{{user.username}}</p>
+        <p>{{user.location}}</p>
+        <p>{{user.counter}}</p>
+        <div class="buttons">
+          <button @click="store.usersMethods.decreaseCounter(user.userId)">-</button>
+          <button @click="store.usersMethods.increaseCounter(user.userId)">+</button>
+        </div>
+      </div>
+    </div>
    
   </div>
 </template>
@@ -34,8 +56,10 @@ export default {
   name: 'HomeView',
   setup() {
     const store = inject('store');
+    console.log('store', store)
     // console.log("Homeview store:", store)
-
+ 
+    
     // uncomment colorCode to change color of counter if using readonly
     // const colorCode = computed({
     //   get(){
@@ -46,7 +70,7 @@ export default {
     //   }  
     // })
     return {
-      store,
+      store
       //  colorCode
 
     }
